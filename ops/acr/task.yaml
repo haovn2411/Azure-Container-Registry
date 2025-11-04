@@ -11,6 +11,6 @@ values:
 steps:
   - bash: |
       echo "Start purging repo: {{.Values.repo}}"
-      acr purge --filter '{{.Values.repo}}:.*' --keep {{.Values.keep}} --ago {{.Values.ago}}
-      echo "Done purging {{.Values.repo}}"
+      echo "{{.Values.keep}}"
+      echo "{{.Values.ago}}"
     timeout: 3600
