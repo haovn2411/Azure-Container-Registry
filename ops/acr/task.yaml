@@ -9,6 +9,10 @@ values:
     default: 0d
 
 steps:
-  - cmd: |
-      echo "Start purging repo: {{.Values.repo}}"
+  - cmd: >
+      /bin/sh -c "echo '========================';
+      echo 'Repo: {{.Values.repo}}';
+      echo 'Keep: {{.Values.keep}}';
+      echo 'Ago: {{.Values.ago}}';
+      echo 'Would run: acr purge --filter {{.Values.repo}}:.* --keep {{.Values.keep}} --ago {{.Values.ago}} --dry-run'"
     timeout: 3600
