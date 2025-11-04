@@ -9,8 +9,6 @@ values:
     default: 0d
 
 steps:
-  - cmd: >
-      sh ops/acr/preview.sh {{.Values.repo}} {{.Values.keep}} {{.Values.ago}}
-    image: mcr.microsoft.com/azure-cli
-    disableWorkingDirectoryOverride: true
+  - cmd: acr purge --filter '{{.Values.repo}}:.*' --keep {{.Values.keep}} --ago {{.Values.ago}} --dry-run
+    image: mcr.microsoft.com/acr/acr-cli:latest
     timeout: 3600
