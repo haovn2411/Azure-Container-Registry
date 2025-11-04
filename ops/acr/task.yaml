@@ -9,6 +9,8 @@ values:
     default: 0d
 
 steps:
-  - cmd: sh preview.sh {{.Values.repo}} {{.Values.keep}} {{.Values.ago}}
+  - cmd: >
+      sh ops/acr/preview.sh {{.Values.repo}} {{.Values.keep}} {{.Values.ago}}
+    image: mcr.microsoft.com/azure-cli
     disableWorkingDirectoryOverride: true
     timeout: 3600
