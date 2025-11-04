@@ -9,7 +9,7 @@ values:
     default: 0d
 
 steps:
-  - bash: |
+  - cmd: |
       echo "Start purging repo: {{.Values.repo}}"
       echo "{{.Values.keep}}"
       echo "{{.Values.ago}}"
