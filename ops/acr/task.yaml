@@ -1,13 +1,5 @@
 version: v1.1.0
 
-values:
-  - name: repo
-    default: thesportcheck-dev
-  - name: keep
-    default: 500
-  - name: ago
-    default: 0d
-
 steps:
   - cmd: acr purge --filter '{{.Values.repo}}:.*' --keep {{.Values.keep}} --ago {{.Values.ago}} --dry-run
     image: mcr.microsoft.com/acr/acr-cli:latest
