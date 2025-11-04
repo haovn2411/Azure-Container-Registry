@@ -1,0 +1,16 @@
+version: v1.1.0
+
+values:
+  - name: repo
+    default: thesportcheck-dev
+  - name: keep
+    default: 500
+  - name: ago
+    default: 0d
+
+steps:
+  - bash: |
+      echo "Start purging repo: {{.Values.repo}}"
+      acr purge --filter '{{.Values.repo}}:.*' --keep {{.Values.keep}} --ago {{.Values.ago}}
+      echo "Done purging {{.Values.repo}}"
+    timeout: 3600
