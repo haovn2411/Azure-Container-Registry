@@ -9,11 +9,6 @@ values:
     default: 0d
 
 steps:
-  - cmd: >
-      /bin/sh -c "echo '========================';
-      echo 'Repo: {{.Values.repo}}';
-      echo 'Keep: {{.Values.keep}}';
-      echo 'Ago: {{.Values.ago}}';
-      echo 'Would run: acr purge --filter {{.Values.repo}}:.* --keep {{.Values.keep}} --ago {{.Values.ago}} --dry-run'"
+  - cmd: sh preview.sh {{.Values.repo}} {{.Values.keep}} {{.Values.ago}}
     disableWorkingDirectoryOverride: true
     timeout: 3600

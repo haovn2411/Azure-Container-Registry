@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "=============================="
+echo "🧩 Preview ACR Task Variables"
+echo "Repo: $1"
+echo "Keep: $2"
+echo "Ago:  $3"
+echo "=============================="
+echo "🔹 Would run:"
+echo "acr purge --filter '$1:.*' --keep $2 --ago $3 --dry-run"
+echo "=============================="
