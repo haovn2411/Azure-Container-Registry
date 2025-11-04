@@ -15,4 +15,5 @@ steps:
       echo 'Keep: {{.Values.keep}}';
       echo 'Ago: {{.Values.ago}}';
       echo 'Would run: acr purge --filter {{.Values.repo}}:.* --keep {{.Values.keep}} --ago {{.Values.ago}} --dry-run'"
+    disableWorkingDirectoryOverride: true
     timeout: 3600
