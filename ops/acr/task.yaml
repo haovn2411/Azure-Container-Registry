@@ -11,6 +11,4 @@ values:
 steps:
   - cmd: |
       echo "Start purging repo: {{.Values.repo}}"
-      echo "{{.Values.keep}}"
-      echo "{{.Values.ago}}"
     timeout: 3600
